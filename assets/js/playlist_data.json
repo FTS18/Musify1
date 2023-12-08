@@ -1,0 +1,71 @@
+{
+  "playlists": [
+    {
+      "id": "c1",
+      "title": "Radio",
+      "imageSrc": "assets/images/cover/cover9.webp"
+    },
+    {
+      "id": "c2",
+      "title": "Playlist",
+      "imageSrc": "assets/images/cover/cover4.webp"
+    },
+    {
+      "id": "c3",
+      "title": "Favourites",
+      "imageSrc": "assets/images/cover/cover7.webp"
+    },
+    {
+      "id": "c4",
+      "title": "Hits",
+      "imageSrc": "assets/images/cover/cover13.webp"
+    },
+    {
+      "id": "c5",
+      "title": "Int'l Hits",
+      "imageSrc": "assets/images/cover/Int'l_Hits.webp"
+    },
+    {
+      "id": "c6",
+      "title": "Bollywood",
+      "imageSrc": "assets/images/cover/cover3.webp"
+    }
+  ],
+  "artists": [
+    {
+      "id": "c2",
+      "title": "Alan Walker",
+      "imageSrc": "assets/images/cover/Alan_Walker.webp"
+    },
+    {
+      "id": "c3",
+      "title": "Marshmello",
+      "imageSrc": "assets/images/cover/Marshmello.webp"
+    },
+    {
+      "id": "c4",
+      "title": "BTS",
+      "imageSrc": "assets/images/cover/BTS.webp"
+    },
+    {
+      "id": "c5",
+      "title": "Coldplay",
+      "imageSrc": "assets/images/cover/Coldplay.webp"
+    },
+    {
+      "id": "c6",
+      "title": "Justin Bieber",
+      "imageSrc": "assets/images/cover/Justin_Bieber.webp"
+    },
+    {
+      "id": "c7",
+      "title": "TheFatRat",
+      "imageSrc": "assets/images/cover/TheFatRat.webp"
+    },
+    {
+      "id": "c8",
+      "title": "Marshmello",
+      "imageSrc": "assets/images/cover/Marshmello.webp"
+    }
+  ]
+}
