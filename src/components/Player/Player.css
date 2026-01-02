@@ -1,0 +1,131 @@
+/* Player Transitions & Animations */
+
+/* Smooth transitions between player views */
+@keyframes playerSlideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes playerSlideDown {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Content transitions */
+@keyframes contentSlideLeft {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes contentSlideRight {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Smooth transform utilities */
+.transition-smooth {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-fast {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-slow {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* GPU acceleration for smooth animations */
+.player-container,
+.mini-player,
+.fullscreen-player,
+.expanded-player {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Smooth color transitions */
+.player-accent-transition {
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Text transitions */
+.player-text-transition {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Button state transitions */
+.player-btn-transition {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.player-btn-transition:active {
+    transform: scale(0.95);
+}

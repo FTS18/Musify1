@@ -1,0 +1,126 @@
+{
+  "playlists": [
+    {
+      "id": "tt2pca",
+      "title": "Maharani",
+      "imageSrc": "assets/images/cover/maharani.jpg"
+    },
+    {
+      "id": "12og5k",
+      "title": "Hass Hass",
+      "imageSrc": "assets/images/cover/Hass Hass.jpg"
+    },
+    {
+      "id": "39970a",
+      "title": "Ram Siya Ram",
+      "imageSrc": "assets/images/cover/Ram Siya Ram From Adipurush.jpg"
+    },
+    {
+      "id": "9isv2s",
+      "title": "Sher Khul Gaye",
+      "imageSrc": "assets/images/cover/sher khul gaye from fighter.jpg"
+    },
+    {
+      "id": "55vcsg",
+      "title": "The Nights",
+      "imageSrc": "assets/images/cover/the nights.jpg"
+    },
+    {
+      "id": "pon64q",
+      "title": "Mi Amor",
+      "imageSrc": "assets/images/cover/Mi Amor.jpg"
+    },
+    {
+      "id": "joo56a",
+      "title": "Mera Joota Hai Japani",
+      "imageSrc": "assets/images/cover/Mera Joota Hai Japani.jpg"
+    },
+    {
+      "id": "5kcc6y",
+      "title": "Choo Lo",
+      "imageSrc": "assets/images/cover/Choo Lo.jpg"
+    },
+    {
+      "id": "ulvaer",
+      "title": "",
+      "imageSrc": "assets/images/cover/khalasi  coke studio bharat.jpg"
+    },
+    {
+      "id": "oodnmb",
+      "title": "",
+      "imageSrc": "assets/images/cover/Pasoori.jpg"
+    },
+    {
+      "id": "elnp4d",
+      "title": "Tu Chahiye",
+      "imageSrc": "assets/images/cover/Tu Chahiye.jpg"
+    }
+  ],
+  "artists": [
+    {
+      "id": "arijit",
+      "title": "Arijit Singh",
+      "imageSrc": "assets/images/artists/arjit.webp"
+    },
+    {
+      "id": "yoyo",
+      "title": "Honey Singh",
+      "imageSrc": "assets/images/artists/yoyo.webp"
+    },
+    {
+      "id": "atif",
+      "title": "Atif Aslam",
+      "imageSrc": "assets/images/artists/atif.webp"
+    },
+    {
+      "id": "shubh",
+      "title": "Shubh",
+      "imageSrc": "assets/images/artists/shub.webp"
+    },
+    {
+      "id": "c6",
+      "title": "King",
+      "imageSrc": "assets/images/artists/King.webp"
+    },
+    {
+      "id": "c7",
+      "title": "Armaan Malik",
+      "imageSrc": "assets/images/artists/am.webp"
+    },
+    {
+      "id": "carryminati",
+      "title": "CarryMinati",
+      "imageSrc": "assets/images/artists/cn.webp"
+    },
+    {
+      "id": "shreyaghoshal",
+      "title": "Shreya Ghoshal",
+      "imageSrc": "assets/images/artists/shreya.webp"
+    },
+    {
+      "id": "badshah",
+      "title": "Badshah",
+      "imageSrc": "assets/images/artists/bdsh.webp"
+    },
+    {
+      "id": "iqlipsenova",
+      "title": "Iqlipse Nova",
+      "imageSrc": "assets/images/artists/in.webp"
+    },
+    {
+      "id": "kk",
+      "title": "KK",
+      "imageSrc": "assets/images/artists/kk.webp"
+    },
+    {
+      "id": "nehakakkar",
+      "title": "Neha Kakkar",
+      "imageSrc": "assets/images/artists/nk.webp"
+    },
+    {
+      "id": "pritam",
+      "title": "Pritam",
+      "imageSrc": "assets/images/artists/pritam.webp"
+    }
+  ]
+}

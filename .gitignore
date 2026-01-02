@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+.npm
+package-lock.json
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+scripts/.env
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache/
+.eslintcache
+
+# EXCLUDE: Audio files (serve from external)
+public/assets/songs/**/*.mp3
+public/assets/songs/**/*.wav
+public/assets/songs/**/*.flac
+public/assets/songs/**/*.m4a
+public/assets/songs/**/*.aac
+
+# Script generated data
+scripts/*.json
+scripts/artist_covers/
+scripts/*.log
+
+# Temporary
+temp/
+tmp/
+*.tmp
+

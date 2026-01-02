@@ -1,0 +1,28 @@
+{
+  "name": "musify",
+  "version": "1.0.0",
+  "description": "Radio music application",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "music",
+    "radio",
+    "web-app"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
+    "claude": "^0.1.1",
+    "firebase": "^12.7.0",
+    "motion": "^12.23.26",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router-dom": "^7.11.0",
+    "vite": "^7.3.0"
+  }
+}

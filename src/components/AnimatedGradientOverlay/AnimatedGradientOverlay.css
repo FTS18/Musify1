@@ -1,0 +1,167 @@
+/* Animated Gradient Overlay System */
+.gradient-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  transition: background 2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: background;
+}
+
+/* Overlay 1 - Moves diagonally */
+.gradient-overlay-1 {
+  animation: gradientMove1 20s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+/* Overlay 2 - Moves in opposite direction */
+.gradient-overlay-2 {
+  animation: gradientMove2 25s ease-in-out infinite;
+  opacity: 0.7;
+  animation-delay: -5s;
+}
+
+/* Overlay 3 - Pulsing center */
+.gradient-overlay-3 {
+  animation: gradientMove3 30s ease-in-out infinite;
+  opacity: 0.6;
+  animation-delay: -10s;
+}
+
+/* Animation keyframes */
+@keyframes gradientMove1 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    filter: blur(80px);
+  }
+
+  33% {
+    transform: translate(15%, -10%) scale(1.1);
+    filter: blur(100px);
+  }
+
+  66% {
+    transform: translate(-10%, 15%) scale(0.95);
+    filter: blur(90px);
+  }
+}
+
+@keyframes gradientMove2 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    filter: blur(90px);
+  }
+
+  33% {
+    transform: translate(-12%, 12%) scale(1.08);
+    filter: blur(110px);
+  }
+
+  66% {
+    transform: translate(12%, -8%) scale(0.98);
+    filter: blur(95px);
+  }
+}
+
+@keyframes gradientMove3 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    filter: blur(100px);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translate(5%, 5%) scale(1.15);
+    filter: blur(120px);
+    opacity: 0.8;
+  }
+}
+
+/* Ensure all main app sections are above gradients */
+.app-layout {
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar,
+.top-bar,
+.right-sidebar,
+.main-view,
+.content-padding {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced backdrop blur for components */
+.sidebar,
+.top-bar,
+.right-sidebar {
+  backdrop-filter: blur(60px) saturate(180%);
+  -webkit-backdrop-filter: blur(60px) saturate(180%);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .gradient-overlay {
+    filter: blur(60px);
+  }
+
+  @keyframes gradientMove1 {
+
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+      filter: blur(50px);
+    }
+
+    50% {
+      transform: translate(10%, -8%) scale(1.05);
+      filter: blur(60px);
+    }
+  }
+
+  @keyframes gradientMove2 {
+
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+      filter: blur(55px);
+    }
+
+    50% {
+      transform: translate(-8%, 10%) scale(1.03);
+      filter: blur(65px);
+    }
+  }
+
+  @keyframes gradientMove3 {
+
+    0%,
+    100% {
+      transform: scale(1);
+      filter: blur(60px);
+    }
+
+    50% {
+      transform: scale(1.1);
+      filter: blur(70px);
+    }
+  }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-overlay {
+    animation: none !important;
+    transition: background 1s ease;
+  }
+}

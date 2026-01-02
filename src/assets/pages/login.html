@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Musify</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+    <!-- Back Button -->
+    <a href="../../index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Musify
+    </a>
+
+    <div class="login-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <img src="../images/Musify.svg" alt="Musify Logo" class="auth-logo">
+                <h1 class="auth-title">Welcome</h1>
+                <p class="auth-subtitle">Join the rhythm of your life.</p>
+            </div>
+
+            <div class="auth-tabs" id="authTabs">
+                <div class="auth-tab active" data-target="login">Login</div>
+                <div class="auth-tab" data-target="signup">Sign Up</div>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="form-view active">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="loginEmail" class="auth-input" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="loginPassword" class="auth-input" placeholder="Password" required>
+                </div>
+
+                <div class="form-footer">
+                    <a href="#" class="forgot-password" id="forgotPasswordLink">Forgot Password?</a>
+                </div>
+
+                <div id="loginError" class="error-message"></div>
+                <button type="submit" class="auth-btn" id="loginBtn">Log In</button>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signupForm" class="form-view">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="signupName" class="auth-input" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="signupEmail" class="auth-input" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="signupPassword" class="auth-input" placeholder="Password (min 6 chars)"
+                        required minlength="6">
+                </div>
+                <div id="signupError" class="error-message"></div>
+                <button type="submit" class="auth-btn" id="signupBtn">Sign Up</button>
+            </form>
+
+            <!-- Request Password Reset Form -->
+            <form id="resetForm" class="form-view">
+                <div class="reset-header">
+                    <p>Enter your email address and we'll send you a link to reset your password.</p>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="resetEmail" class="auth-input" placeholder="Email Address" required>
+                </div>
+                <div id="resetError" class="error-message"></div>
+                <button type="submit" class="auth-btn" id="resetBtn">Send Reset Link</button>
+                <div class="text-center mt-3">
+                    <a href="#" id="backToLogin" class="back-to-login">Back to Login</a>
+                </div>
+            </form>
+
+            <div class="auth-separator" id="socialSeparator">
+                <span>OR</span>
+            </div>
+
+            <button class="google-btn" id="googleBtn">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
+                <span>Sign in with Google</span>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="../js/firebase-init.js"></script>
+    <script type="module" src="../js/auth.js"></script>
+    <script type="module" src="../js/login-ui.js"></script>
+
+</body>
+
+</html>

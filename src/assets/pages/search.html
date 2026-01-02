@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-US" class="notranslate" translate="no">
+
+    <head>
+        <title>Musify</title>
+        <meta name="google" content="notranslate" />
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="theme-color" content="#000">
+        <meta name="msapplication-navbutton-color" content="#000">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="msapplication-starturl" content="/index.html">
+        <meta name="application-name" content="Musify">
+        <meta name="apple-mobile-web-app-title" content="Musify">
+        <link rel="shortcut icon" href="assets/images/favicons/Musify.png"
+            type="image/png">
+        <link rel="apple-touch-icon" sizes="180x180"
+            href="assets/images/favicons/ios/180.png">
+        <link rel="icon" type="image/png" sizes="48x48"
+            href="assets/images/favicons/android/android-launchericon-48-48.png">
+        <link rel="icon" type="image/png" sizes="96x96"
+            href="assets/images/favicons/android/android-launchericon-96-96.png">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+        <script src="https://kit.fontawesome.com/47c40e1acb.js"
+            crossorigin="anonymous"></script>
+        <link rel="shortcut icon"
+            href="assets/images/favicons/windows11/Square44x44Logo.targetsize-48.png"
+            sizes="48x48" type="image/png">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/theme.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /><script
+            src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+        <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js"></script>-->
+        <script src="assets/js/lazysizes.min.js"></script>
+        <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').then(registration => {
+                    console.log('Service Worker is registered with scope: ', registration.scope);
+                }).catch(err => {
+                    console.error('Registration failed: ', err);
+                });
+            });
+        };document.addEventListener('DOMContentLoaded', (event) => {
+    let deferredPrompt;
+    const addBtn = document.querySelector('.add-button');
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        addBtn.style.display = 'block';
+    });
+
+    addBtn.addEventListener('click', async () => {
+        addBtn.style.display = 'none';
+        deferredPrompt.prompt();
+        
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the A2HS prompt');
+            } else {
+                console.log('User dismissed the A2HS prompt');
+            }
+            deferredPrompt = null;
+        });
+    });
+
+    window.addEventListener('appinstalled', () => {
+        hideInstallPromotion();
+        window.deferredPrompt = null;
+        console.log('PWA was installed');
+    });
+});
+
+    </script>
+    </head>
+
+    <body>
+        <button class="add-button">Add to home screen</button>
+        <audio src id="audio-source" preload="metadata"></audio>
+        <nav class="navbar">
+            <div class="full_logo">
+                <a href="index.html" class="logo">
+                    <img id="svg" src="assets/images/Musify.svg" alt="">
+                </a>
+            </div>
+            <div class="search-box">
+                <input class="input" onkeyup="search()" type="text"
+                    placeholder="Search..." required autofocus>
+                <button type="submit" onclick="search()" class="go-icon"><i
+                        class="fas fa-search"></i></button>
+            </div>
+            <a class="toggle">
+                <span class="menuBtn"><i
+                        class="material-icons">short_text</i></span><!--
+                <span class="menuBtn a"><i class="material-icons">close</i></span>-->
+            </a>
+            <div class="menu">
+                <div class="menuContents">
+                    <a href="index.html">Home</a>
+                    <a href="assets/pages/login.html">Login</a>
+                    <a href="assets/pages/watch.html">Contribute</a>
+                    <a href="assets/pages/explore.html">Explore</a>
+                    <a href="assets/pages/about-us.html">About</a>
+                </div>
+                <div class="social">
+                    <a href="https://youtube.com/spacify18"
+                        class="fa fa-youtube-play"></a>
+                    <!--<a href="#"class="fa fa-comments"></a>-->
+                    <a href="https://instagram.com/ananaydubey"
+                        class="fa fa-instagram"></a>
+                    <a href="https://github.com/fts18" class="fa fa-github"></a>
+                    <a href="https://www.linkedin.com/in/ananaydubey/"
+                        class="fab fa-linkedin-in"></a>
+                </div>
+            </div>
+        </nav>
+        <section class="content">
+            <a class="card c01" href="#">
+                <img class="imgBx lazyload"
+                    data-src="assets/images/cover/cover14.webp"
+                    title="Recent Hits">
+                <div class="overlayImg">
+                </div>
+                <div class="para p1">
+                    Recent Hits
+                </div>
+            </a>
+            <!--<a class="card c01" href="#">
+                <img class="imgBx lazyload"
+                    data-src="assets/images/cover/cover4.webp"
+                    title="Recent Hits">
+                <div class="overlayImg">
+                </div>
+                <div class="para p1">
+                    Best of 2023
+                </div>
+            </a>-->
+            <div class="playlist-title t1">
+                Recommended
+            </div>
+            <div class="playlist-container">
+                <div class="playlist-group pl1" id="playlists"></div>
+                <div class="playlist-title t2">Artists</div>
+                <div class="playlist-group pl2" id="artists"></div>
+            </div>
+        </section>
+        <a class="back-btn material-icons icon hide"
+            title="Back">arrow_back_ios</a>
+        <section class="player">
+            <a class="playlist-btn material-icons icon hide"
+                title="Playlist">playlist_play</a>
+            <h1 class="current-song-name"></h1>
+            <p class="artist-name hide"></p>
+            <img data-src="assets\images\cover\Chaand Baaliyan_cover.jpg"
+                class="cover hide lazyload" id="cover" alt>
+            <div class="seek-bar-container">
+                <input type="range" class="music-seek-bar" value="0"
+                    step="0.01">
+                <p class="current-time hide">0 : 00</p>
+                <p class="duration hide">1:34</p>
+            </div>
+            <div class="controls">
+                <span><i id="repeat" class="material-icons"
+                        title="Playlist Looped">repeat</i></span>
+                <div class="speed-container hide">
+                    <input type="range" class="speed-slider" min="0.5" max="2"
+                        step="0.1" value="1" title="Playback Speed">
+                    <span class="material-icons speed-icon active"
+                        id="speed-toggle"
+                        title="Playback Speed">speed</span>
+                </div>
+                <div class="main-controls">
+                    <i id="prev" class="material-icons active"
+                        title="Previous Song">skip_previous</i>
+                    <i id="play-pause" class="material-icons play active"
+                        title="Play">play_arrow</i>
+                    <i id="play-pause" class="material-icons pause"
+                        title="Pause">pause</i>
+                    <i id="next" class="material-icons active"
+                        title="Next Song">skip_next</i>
+                </div>
+                <div class="volume-container hide">
+                    <input type="range" class="volume-slider" value="1" max="1"
+                        step="0.05">
+                    <span class="material-icons hide active" id="up"
+                        title="Volume">volume_up</span>
+                </div>
+                <span><i id="download-song" class="material-icons"
+                        title="Download">download</i></span>
+            </div>
+        </section>
+        <section class="playlists">
+            <div class="playlist-head"><i
+                    class="back-btn1 icon hide material-icons"
+                    title="Back">arrow_back_ios</i>
+                <h1 class="playlists-title">Playlist</h1></div>
+            <div class="queue-container" id="queue">
+                <!-- Song queue will be dynamically generated here -->
+            </div>
+            <div class="loadmore">
+                <button id="loadMoreButton">Load More</button></div>
+        </section>
+
+        <section class="scroll-div2">
+            <div class="bar">
+            </div>
+        </section>
+        <footer id="copyright"></footer>
+        <script src="assets/js/data.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script>
+        //var goFS = document.querySelector("body");
+        //goFS.addEventListener("click", function() 
+        //document.body.requestFullscreen();
+        //}, false);// Download current song
+        document.getElementById('download-song').addEventListener('click', () => {
+    console.log('Download button clicked');
+
+    // Extract title and artist information from the current song's metadata
+    const currentSong = songs[currentMusic];
+    const title = currentSong.name;
+    const artist = currentSong.artist;
+
+    // Create a temporary anchor element
+    const downloadLink = document.createElement('a');
+
+    // Set the href attribute to the URL of the current song
+    downloadLink.href = music.src;
+    console.log('Download link href:', downloadLink.href);
+
+    // Construct the filename using title and artist information
+    const filename = `${title} - ${artist}.mp3`;
+    console.log('Download filename:', filename);
+
+    // Set the download attribute to force download with the constructed filename
+    downloadLink.setAttribute('download', filename);
+
+    // Append the anchor to the body and click it programmatically
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+
+    // Remove the anchor from the body
+    document.body.removeChild(downloadLink);
+});const speedContainer = document.querySelector('.speed-container');
+const speedSlider = document.querySelector('.speed-slider');
+const speedIcon = document.getElementById('speed-toggle');
+
+// Toggle the visibility of speed slider when clicking the speed icon
+speedIcon.addEventListener('click', () => {
+    speedContainer.classList.toggle('active');
+    speedSlider.classList.toggle('active'); 
+    speedIcon.classList.toggle('active')// Update to match the CSS class
+});
+
+// Add event listener to handle changes in playback speed
+speedSlider.addEventListener('input', () => {
+    // Get the selected playback speed value
+    const playbackSpeed = speedSlider.value;
+
+    // Update the playback rate of the audio element
+    music.playbackRate = playbackSpeed;
+});const currentYear = new Date().getFullYear();
+const footer = document.getElementById('copyright');
+
+// Create anchor element for "Ananay Dubey"
+const githubLink = document.createElement('a');
+githubLink.href = 'https://github.com/fts18';
+githubLink.textContent = 'Ananay Dubey';
+githubLink.style.textDecoration = 'none'; // Initially, remove underline
+githubLink.style.borderBottom = '2px dashed #00ff80'; // Initially, set transparent dashed underline
+githubLink.style.transition = 'border-bottom-color 0.3s'; // Add transition effect
+
+// Apply hover effect
+githubLink.addEventListener('mouseenter', () => {
+    githubLink.style.borderBottomColor = 'black'; // Change to black when hovered
+});
+
+githubLink.addEventListener('mouseleave', () => {
+    githubLink.style.borderBottomColor = 'transparent'; // Change back to transparent when not hovered
+});
+
+// Append GitHub link and "Ananay Dubey" to footer
+footer.appendChild(githubLink);
+footer.innerHTML += `, © ${currentYear} | All Rights Reserved`;
+
+
+    </script>
+    </body>
+
+</html>
